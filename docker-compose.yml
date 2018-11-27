@@ -7,3 +7,12 @@ services:
         ports:
             - '80:80'
             - '443:443'
+        secrets:
+            - nginx.crt
+            - nginx.key
+
+secrets:
+    nginx.crt:
+        external: true
+    nginx.key:
+        external: true

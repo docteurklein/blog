@@ -1,0 +1,36 @@
+body {
+    margin: 40px auto;
+    max-width: 950px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #444;
+    padding: 0 10px;
+}
+h1,h2,h3 {
+    line-height: 1.2;
+}
+pre {
+    overflow: auto;
+}
+header {
+    position: sticky;
+    top: 0px;
+    background: #ccc;
+    height: 25px;
+    padding: 10px;
+}
+code, pre {
+    background: #eee;
+}
+:target {
+    margin-top: -30px;
+    border-top: 60px solid transparent;
+    background-clip: padding-box;
+    outline: none;
+}
+:target::before {
+    content: "";
+    display: block;
+    height: 45px; /* fixed header height*/
+    margin: -45px 0 0; /* negative fixed header height */
+}
