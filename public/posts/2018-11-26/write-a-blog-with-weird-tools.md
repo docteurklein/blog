@@ -1,6 +1,8 @@
 # Writing a blog with weird tools
 
-This is a blog about having fun writing a blog, using the minimum amount of code.
+This is an article about having fun writing a blog, using the minimum amount of code.
+
+The source code can be found [here](https://github.com/docteurklein/blog).
 
 We'll use:
 
@@ -43,8 +45,8 @@ No need to use complicated gulp files requiring 500MB of dependencies!
 `inotifywait` does the job perfectly well:
 
 ```
-inotifywait -e create -e modify -e delete -m --format='%w%f' -r template.html public | xargs -L 1 \
-    make build
+inotifywait -e create -e modify -e delete -m --format='%w%f' -r template.html public \
+    | xargs -L 1 make build
 ```
 
 - `inotifywait […]` will output one line per watched file
@@ -79,7 +81,12 @@ It's a multi-stage build:
 Find whatever docker engine somewhere out here.
 I'm currently using docker-machine to setup a gcloud compute instance, but you do as you wish.
 
-    make deploy
+```
+docker-compose build
+docker-compose push
+eval $(docker-machine env gcloud)
+docker stack deploy --with-registry-auth -c docker-compose.yml blog
+```
 
 
 ## improve the user experience
