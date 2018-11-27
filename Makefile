@@ -1,11 +1,9 @@
-
-.PHONY: build watch deploy
-
 build:
 	find public -type f -name '*.md' | xargs -n1 -P0 ./build.sh
 
 watch:
-	inotifywait -e create -e modify -e delete -m --format='%w%f' -r template.html public | xargs -L 1 -I{} \
+	inotifywait -e create -e modify -e delete -m --format='%w%f' \
+		-r template.html public | xargs -L 1 \
 		make build
 
 deploy:
@@ -13,3 +11,5 @@ deploy:
 	docker-compose push
 	eval $$(docker-machine env gcloud) && \
 	docker stack deploy --with-registry-auth -c docker-compose.yml blog
+
+.PHONY: build watch deploy
