@@ -4,13 +4,15 @@ RUN apk add --no-cache cargo
 
 RUN cargo install comrak
 
+RUN apk add --no-cache make
+
 ENV PATH=/root/.cargo/bin:$PATH
 
 WORKDIR /code
 
 COPY . .
 
-RUN find public -type f -name '*.md' | xargs -n1 -P0 ./build.sh
+RUN make
 
 FROM nginx:alpine
 

@@ -9,8 +9,8 @@ cargo install comrak
 ## use builtin `printf` to render templates
 
 ```
-printf "$(cat template.html)" "$(head -n1 $1)" "$(comrak "$1")" > build/$(echo "$1" | sed -e 's/.md//').html
-
+printf "$(cat template.html)" "$(head -n1 $1)" "$(comrak "$1")" \
+    > build/$(echo "$1" | sed -e 's/.md//').html
 ```
 
 ## build it
@@ -27,21 +27,14 @@ Let's use a `Dockerfile` to generate the html and then populate a default nginx 
 
 ```Dockerfile
 FROM alpine:edge as build
-
 RUN apk add --no-cache cargo
-
 RUN cargo install comrak
-
 ENV PATH=/root/.cargo/bin:$PATH
-
 WORKDIR /code
-
 COPY . .
-
 RUN find public -type f -name '*.md' | xargs -n1 -P0 ./build.sh
 
 FROM nginx:alpine
-
 COPY --from=build /code/build/public /usr/share/nginx/html
 ```
 
