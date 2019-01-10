@@ -1,6 +1,6 @@
 build:
 	find public -type f -name '*.md' | xargs -n1 -P0 ./build.sh
-	cp -v public/style.css build/public/
+	cp -rv public/* build/public/
 
 watch:
 	inotifywait -e create -e modify -e delete -m --format='%w%f' \

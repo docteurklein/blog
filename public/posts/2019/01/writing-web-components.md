@@ -9,7 +9,9 @@ That's gonna be a random list of thoughts and findings about do's and don't.
 
 ## Plan
 
-We're gonna discuss theory, naming, and the reasons why we want web components, and then list all the little tricks I discovered while writing [hippiemedia/web-components](https://github.com/hippiemedia/web-components).
+We're gonna discuss theory, naming, and the reasons why we want web components, and then list all the little tricks I discovered while writing [hippiemedia/web-components](https://github.com/hippiemedia/web-components) to render API reference endpoints like this:
+
+![example](/posts/2019/01/writing-web-components/example.png)
 
 
 - [What's the difference between Web Components and Custom Elements?](#h-whats-the-difference-between-web-components-and-custom-elements?)
@@ -222,7 +224,7 @@ That's where things like bootstrap components fall short: you have to copy-paste
 
 
 With a Custom Element, you define it once and reuse it everywhere.  
-With shadow DOM, you **hide** and **isolate** the div soup from its ancestors, gaining **CSS isolation** **AND** terrible experience viewing the HTML source.
+With shadow DOM, you **hide** and **isolate** the div soup from its ancestors, gaining **CSS isolation** **AND** avoiding terrible experience viewing the HTML source.
 
 Technically, the shadow DOM is still visible in DevTools, but hidden by default.  
 
@@ -334,7 +336,9 @@ And then use it in good old html:
 ### How to style a web component?
 
 
-During render, add a `<link>` to a stylesheet. By using an external resource, you increase your cache hit rate (as explained above).  
+Add a `<link>` to a stylesheet **inside** your shadow root. By using an external resource, you increase your cache hit rate (as explained above).  
+By linking the stylesheet inside the shadow root, the CSS will automatically be isolated!
+
 Another cool advantage of this is that you can share css by simply linking a shared css document.
 
 The interesting part is how CSS behaves and is controlled inside a shadow dom:
