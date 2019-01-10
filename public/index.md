@@ -1,5 +1,8 @@
 # docteurklein's blog
 
+- 2019
+  - 01
+    - [writing web components](/posts/2019/01/writing-web-components.html)
 - [2018-11-26: write a blog with weird tools](/posts/2018-11-26/write-a-blog-with-weird-tools.html)
 - [2015-01-11: docker-networking.html](posts/2015-01-11-docker-networking.html)
 - [2014-08-13: yield-rant-and-php-mongodb.html](posts/2014-08-13-yield-rant-and-php-mongodb.html)
