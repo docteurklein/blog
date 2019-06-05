@@ -1,1 +1,3 @@
 build
+.nginx.key
+.nginx.crt

@@ -14,13 +14,13 @@ We're gonna discuss theory, naming, and the reasons why we want web components, 
 ![example](/posts/2019/01/writing-web-components/example.png)
 
 
-- [What's the difference between Web Components and Custom Elements?](#h-whats-the-difference-between-web-components-and-custom-elements?)
-- [Why writing Web Components when we have React](#h-why-writing-web-components-when-we-have-react)
-- [How to avoid the `div` soup](#h-how-to-avoid-the-div-soup)
-- [How to keep the mouse focus?](#h-how-to-keep-the-mouse-focus)
-- [How to manipulate `<slot>` contents?](#h-how-to-manipulate-slot>-contents?)
-- [How to deploy your web components?](#h-how-to-deploy-your-web-components)
-- [How to style a web component?](#h-how-to-style-a-web-component)
+- [What's the difference between Web Components and Custom Elements?](#whats-the-difference-between-web-components-and-custom-elements?)
+- [Why writing Web Components when we have React](#why-writing-web-components-when-we-have-react)
+- [How to avoid the `div` soup](#how-to-avoid-the-div-soup)
+- [How to keep the mouse focus?](#how-to-keep-the-mouse-focus)
+- [How to manipulate `<slot>` contents?](#how-to-manipulate-slot>-contents?)
+- [How to deploy your web components?](#how-to-deploy-your-web-components)
+- [How to style a web component?](#how-to-style-a-web-component)
 
 ### What's the difference between Web Components and Custom Elements?
 

@@ -5,8 +5,8 @@ services:
         image: eu.gcr.io/docker-223614/blog_nginx:latest
         build: .
         ports:
-            - '80'
-            - '443'
+            - '80:80'
+            - '443:443'
         secrets:
             - nginx.crt
             - nginx.key

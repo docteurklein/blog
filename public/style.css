@@ -5,56 +5,38 @@ body {
     font-size: 18px;
     color: #444;
     padding: 0 10px;
+    font-family: Georgia, serif;
 }
+
 h1,h2,h3 {
     line-height: 1.2;
 }
+
 pre {
     overflow: auto;
     max-height: 300px;
 }
-header {
-    position: sticky;
-    top: 0px;
-    background: #ccc;
-    height: 25px;
-    padding: 10px;
-}
+
 code, pre {
     background: #eee;
-}
-:target {
-    margin-top: -10px;
-    border-top: 10px solid transparent;
-    background-clip: padding-box;
-    outline: none;
-}
-:target::before {
-    content: "";
-    display: block;
-    height: 15px; /* fixed header height*/
-    margin: -1px 0 0; /* negative fixed header height */
+    font-family: monospace;
 }
 
 blockquote {
-    display:block;
+    display: block;
     background: #fff;
     padding: 15px 20px 15px 45px;
     margin: 0 0 20px;
     position: relative;
 
-    /*Font*/
-    font-family: Georgia, serif;
     font-size: 16px;
     line-height: 1.2;
     color: #666;
     text-align: justify;
 
-    /*Borders - (Optional)*/
     border-left: 15px solid #c76c0c;
     border-right: 2px solid #c76c0c;
 
-    /*Box Shadow - (Optional)*/
     -moz-box-shadow: 2px 2px 15px #ccc;
     -webkit-box-shadow: 2px 2px 15px #ccc;
     box-shadow: 2px 2px 15px #ccc;
@@ -63,36 +45,21 @@ blockquote {
 blockquote::before {
     content: "\201C"; /*Unicode for Left Double Quote*/
 
-    /*Font*/
-    font-family: Georgia, serif;
     font-size: 60px;
     font-weight: bold;
     color: #999;
 
-    /*Positioning*/
     position: absolute;
     left: 10px;
     top:5px;
 }
 
-blockquote::after {
-    /*Reset to make sure*/
-    content: "";
-}
-
-blockquote a {
-    text-decoration: none;
-    background: #eee;
-    cursor: pointer;
-    padding: 0 3px;
-    color: #c76c0c;
-}
-
-blockquote a:hover {
-    color: #666;
-}
-
 blockquote em {
     font-style: italic;
+}
+
+a.anchor[href]::before {
+  content: "\1F517";
+  padding-right: 10px;
 }
 
